@@ -1,15 +1,15 @@
 function goBack() {
-  window.location.href = "index.html";
+    window.location.href = "index.html";
 }
 
-const params= new URLSearchParams(window.location.search)
+const params = new URLSearchParams(window.location.search)
 const id = params.get("id")
 
-const products =  fetch(`https://dummyjson.com/products/${id}`)
- .then(req => req.json())
+const products = fetch(`https://dummyjson.com/products/${id}`)
+    .then(req => req.json())
     .then(data => {
         console.log(data)
-        document.getElementById("product-detail").innerHTML=`
+        document.getElementById("product-detail").innerHTML = `
         
         <div class="product-detail-card">
             <img src=${data.thumbnail} alt="">

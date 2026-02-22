@@ -1,15 +1,15 @@
 const container = document.getElementById("container");
 
- const products =  fetch("https://dummyjson.com/products")
+const products = fetch("https://dummyjson.com/products")
   .then(res => res.json())
   .then(data => {
-     let item =[]
+    let item = []
     for (let i = 0; i < 30; i++) {
-        item.push(data.products[i])
+      item.push(data.products[i])
     }
-   
+
     let total = "";
- 
+
     item.forEach(items => {
       total += `
         <a  href="product.html?id=${items.id}"  class="product-card">
